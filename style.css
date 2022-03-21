@@ -1,0 +1,259 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+header {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scheme4 {
+  background-color: #6b2a5f;
+}
+
+.scheme4-1 {
+  background-color: #f3e6c9;
+}
+
+.scheme4-2 {
+  background-color: #f3e6c9;
+}
+
+.scheme4-3 {
+  background-color: #f3e6c9;
+}
+
+.scheme4-4 {
+  background-color: #f3e6c9;
+}
+
+.scheme4-5 {
+  background-color: #f3e6c9;
+}
+
+#logo > img {
+  border-radius: 50%;
+  height: auto;
+  width: 3rem;
+  padding: 2rem;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  font-family: "Fira Code", monospace;
+  font-weight: 800;
+  gap: 2em;
+  padding: 0.5rem 1.5rem;
+}
+.navbar__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  font-size: smaller;
+  padding: 0%;
+  margin: 0%;
+  list-style: none;
+  gap: 1.5em;
+  color: #5e0b15;
+  flex-wrap: nowrap;
+}
+.navbar__top--list {
+  text-decoration: none;
+  color: #5e0b15;
+}
+.navbar__top--list--num {
+  font-weight: 800;
+  margin-inline-end: 0.5em;
+  color: #5e0b15;
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    position: fixed;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: min(30vh, 75rem) 2em;
+    inset: 0 0 0 30%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(0.5rem);
+  }
+  .navbar__top {
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+
+  #resume {
+    border: 2px solid #5e0b15;
+    border-radius: 4px;
+    color: #5e0b15;
+    background-color: transparent;
+    text-decoration: none;
+    border-spacing: 5px;
+    box-sizing: border-box;
+    padding: 0.75rem 1rem;
+    cursor: pointer;
+  }
+}
+#resume {
+  border: 2px solid #5e0b15;
+  border-radius: 4px;
+  color: #5e0b15;
+  background-color: transparent;
+  text-decoration: none;
+  border-spacing: 5px;
+  box-sizing: border-box;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+}
+
+.l-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.l-side__list {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  list-style: none;
+  bottom: 0;
+  left: 0;
+}
+.l-side .l-side-logo3:nth-last-of-type(1)::after {
+  content: "";
+  display: block;
+  width: 1.5px;
+  height: 5rem;
+  margin: 0px auto;
+  background-color: #93032e;
+}
+
+.r-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.r-side p {
+  writing-mode: vertical-rl;
+}
+.r-side__list {
+  display: flex;
+  position: fixed;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem;
+  bottom: 0;
+  right: 0;
+  color: #93032e;
+}
+.r-side a :last-of-type::after {
+  content: "";
+  display: block;
+  width: 1.5px;
+  height: 5rem;
+  margin: 0px auto;
+  background-color: #93032e;
+}
+
+.responsive-sidebar {
+  display: grid;
+  grid-template-areas: "header header header " "l-side cont r-side" "l-side cont r-side" "l-side footer r-side";
+  grid-template-rows: auto;
+  grid-template-columns: 0.5fr 5fr 0.5fr;
+}
+
+.header {
+  grid-area: header;
+}
+
+.cont {
+  grid-area: cont;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: stretch;
+}
+
+.intro {
+  display: flex;
+  flex-direction: column;
+  color: #001427;
+  justify-content: center;
+  align-items: center;
+  min-height: 60vh;
+  padding: 0px;
+  gap: 1rem;
+}
+
+.intro__firstsec {
+  color: #001427;
+  font-family: "Fira Code", monospace;
+}
+
+.intro__largetxt {
+  font-size: 58px;
+  color: #93032e;
+  padding: 0%;
+  font-style: italic;
+  font-weight: 800;
+}
+
+h2 {
+  color: #5e0b15;
+}
+
+.about-sec {
+  display: flex;
+  flex-direction: column;
+  color: #001427;
+  justify-content: center;
+  align-items: flex-start;
+  min-height: 60vh;
+  padding: 0px;
+}
+
+.contact-sec {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.contact-sec__heading {
+  font-size: 52;
+}
+
+.l-side {
+  grid-area: l-side;
+}
+
+.r-side {
+  grid-area: r-side;
+}
+
+.footer {
+  grid-area: footer;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-bottom: 2rem;
+  padding-top: 5rem;
+}

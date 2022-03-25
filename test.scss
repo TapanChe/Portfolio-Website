@@ -151,7 +151,7 @@ header {
     .l-side-logo3:nth-last-of-type(1)::after {
         content: "";
         display: block;
-        width: 1px;
+        width: 1.5px;
         height: 5rem;
         margin: 0px auto;
         background-color: #93032e;
@@ -180,14 +180,14 @@ header {
         right: 0;
         color: #93032e;
     }
-    // a :last-of-type::after {
-    //     content: "";
-    //     display: block;
-    //     width: 1.5px;
-    //     height: 5rem;
-    //     margin: 0px auto;
-    //     background-color: #93032e;
-    // }
+    a :last-of-type::after {
+        content: "";
+        display: block;
+        width: 1.5px;
+        height: 5rem;
+        margin: 0px auto;
+        background-color: #93032e;
+    }
 }
 
 .responsive-sidebar {
@@ -275,97 +275,4 @@ h2 {
     align-items: center;
     padding-bottom: 2rem;
     padding-top: 5rem;
-}
-
-// Project section
-.projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    // background-color: rgba(white, 0.1);
-
-    &__group {
-        // Single column list centered on small screens
-        display: inline-flex;
-        flex-direction: row;
-        align-items: center;
-
-        // Centered responsive row list on larger screens
-
-        &__item {
-            padding: 20px;
-            margin: 10px;
-
-            // Each item card is 500px wide and will wrap to a single column on a small screen
-            display: flex;
-            flex-direction: row;
-            flex-wrap: wrap;
-            justify-content: center;
-            align-items: center;
-            max-width: 500px;
-
-            // Item cards will not wrap on larger screens
-
-            // Title cards display thumbnail, name and links in a column
-            &--title-card {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-            }
-
-            &--thumbnail {
-                width: 200px;
-                border-radius: 20px;
-                filter: grayscale(100);
-
-                &:hover {
-                    filter: none;
-                }
-            }
-
-            &--dscrb {
-                padding: 0 20px;
-
-                display: none;
-            }
-        }
-    }
-}
-
-// about section
-
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-
-    min-height: 100vh;
-    max-width: inherit;
-
-    padding-bottom: 50px;
-
-    &__study {
-        // Responsive list of studies
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: flex-end;
-
-        &--item {
-            margin: 5px 40px;
-
-            text-align: right;
-
-            &-text {
-                margin: 5px;
-                text-transform: uppercase;
-                flex-wrap: nowrap;
-            }
-        }
-    }
-    &__head {
-        text-align: center;
-        margin-bottom: 5rem;
-    }
 }

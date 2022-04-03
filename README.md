@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="imgs/T-logo.png"/>
+  <img alt="Logo" src="imgs/T-logo.png" width="100" />
 </div>
 <h1 align="center">
   https://tapanche.github.io/Portfolio-Website/ - v1

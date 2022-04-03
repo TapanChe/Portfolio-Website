@@ -5,6 +5,7 @@
 
 body {
   font-family: sans-serif;
+  overflow-x: hidden;
 }
 
 header {
@@ -15,7 +16,7 @@ header {
 }
 
 .scheme4 {
-  background-color: #6b2a5f;
+  background-color: #f3e6c9;
 }
 
 .scheme4-1 {
@@ -38,11 +39,15 @@ header {
   background-color: #f3e6c9;
 }
 
+.mobile-nav-toggle {
+  display: none;
+}
+
 #logo > img {
   border-radius: 50%;
   height: auto;
-  width: 3rem;
-  padding: 2rem;
+  width: 7rem;
+  padding: 0rem;
 }
 
 .navbar {
@@ -54,6 +59,8 @@ header {
   font-weight: 800;
   gap: 2em;
   padding: 0.5rem 1.5rem;
+  position: fixed;
+  right: 0;
 }
 .navbar__top {
   display: flex;
@@ -77,40 +84,58 @@ header {
   color: #5e0b15;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 730px) {
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    background-image: url("imgs/bars-solid.svg");
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: 0;
+    z-index: 9999;
+    width: 2rem;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+  }
+
+  .mobile-nav-toggle[aria-expanded=true] {
+    background: url("imgs/xmark-solid.svg");
+    background-repeat: no-repeat;
+    background-color: transparent;
+  }
+
   .navbar {
-    position: fixed;
     flex-direction: column;
     align-items: flex-start;
-    padding: min(30vh, 75rem) 2em;
+    padding: 10rem;
     inset: 0 0 0 30%;
+    justify-content: flex-start;
     background: rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(0.5rem);
+    backdrop-filter: blur(1rem);
+    gap: 0;
+    padding: 0;
+    z-index: 1000;
+    transform: translateX(100%);
+    transition: transform 350ms ease-in-out;
   }
   .navbar__top {
     flex-direction: column;
     flex-wrap: wrap;
     align-items: flex-start;
+    padding: min(20vh, 10rem) 2em;
+  }
+  .navbar #resume {
+    margin-top: 69px;
   }
 
-  #resume {
-    border: 2px solid #5e0b15;
-    border-radius: 4px;
-    color: #5e0b15;
-    background-color: transparent;
-    text-decoration: none;
-    border-spacing: 5px;
-    box-sizing: border-box;
-    padding: 0.75rem 1rem;
-    cursor: pointer;
+  .navbar[data-visible=true] {
+    transform: translateX(50%);
   }
 
-  .l-side {
+  aside {
     display: none;
-  }
-
-  .r-side {
-    display: none;
+    visibility: hidden;
   }
 }
 #resume {
@@ -125,6 +150,12 @@ header {
   cursor: pointer;
 }
 
+.l-side {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
 .l-side__list {
   display: flex;
   position: fixed;
@@ -254,9 +285,11 @@ h2 {
   min-height: 100vh;
 }
 .projects__group {
-  display: inline-flex;
+  display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 .projects__group__item {
   padding: 20px;

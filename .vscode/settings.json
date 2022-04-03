@@ -1,3 +1,4 @@
 {
-    "cSpell.ignoreWords": ["Chettimada", "Tapan", "firstsec", "largetxt"]
+    "cSpell.ignoreWords": ["Chettimada", "Tapan", "firstsec", "largetxt"],
+    "liveServer.settings.port": 5501
 }
